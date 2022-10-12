@@ -1,0 +1,33 @@
+cmake_minimum_required(VERSION 3.10)
+project( SCLEII_onlyOneLIbAddSeprt_oh VERSION 1.0)
+
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+if(MSVC)
+    set(CMAKE_DEBUG_POSTFIX "d")
+endif()
+#link_directories(${CMAKE_BINARY_DIR} )
+
+message( "CMAKE_C_COMPILER = ${CMAKE_C_COMPILER}"  )
+message( "CMAKE_C_COMPILER_VERSION = ${CMAKE_C_COMPILER_VERSION}"  )
+message( "CMAKE_CXX_PLATFORM_ID = ${CMAKE_CXX_PLATFORM_ID}"  )
+message( "CMAKE_CXX_COMPILER_TARGET = ${CMAKE_CXX_COMPILER_TARGET}"  )
+message( "CMAKE_CXX_COMPILER_AR = ${CMAKE_CXX_COMPILER_AR}"  )
+message( "CMAKE_C_COMPILER_ABI = ${CMAKE_C_COMPILER_ABI}"  )
+message( "CMAKE_C_COMPILER_TARGET = ${CMAKE_C_COMPILER_TARGET}"  )
+message( "CMAKE_HOST_SYSTEM = ${CMAKE_HOST_SYSTEM}"  )
+message( "CMAKE_HOST_SYSTEM_NAME = ${CMAKE_HOST_SYSTEM_NAME}"  )
+message( "CMAKE_VS_PLATFORM_NAME = ${CMAKE_VS_PLATFORM_NAME}"  )
+message( "CMAKE_VS_PLATFORM_TOOLSET = ${CMAKE_VS_PLATFORM_TOOLSET}"  )
+message( "CMAKE_CXX_COMPILER_VERSION = ${CMAKE_CXX_COMPILER_VERSION}"  )
+
+
+
+
+
+# 改变安装路径可以使用下面的语句，Unix: "/usr/local", Windows: "c:/Program Files/${PROJECT_NAME}" 为默认值，所有的DESTINATION均以此目录为根目录
+# set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/mymath)
+set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/../${PROJECT_NAME}_${CMAKE_CXX_COMPILER_VERSION}_install)
+
+
+add_subdirectory( mymath  )
+#add_subdirectory( mymathApp )
